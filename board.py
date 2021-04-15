@@ -14,7 +14,7 @@ class Board:
 			[" ", " ", " "],
 			[" ", " ", " "]
 		]
-		self.num_board = self.makeBoardWithNums() # Makes a board with nums
+		self.num_board = self.makeBoardWithNums() # Assigning the num board to self.num_board
 		self.current_winner = None
 
 	# Makes a board with numbers
