@@ -13,7 +13,7 @@ from player import Player, User, Random_player, Minimax_player
 def game(board, x_player, o_player):
 	current_player = x_player # Gives turns to the players
 
-	board.printBoard()
+	board.printNumBoard()
 
 	# Loops while the board has at least 1 empty space
 	while board.thereIsEmptySpace():
