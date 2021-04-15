@@ -42,7 +42,7 @@ class User(Player):
 	# Returns True if the input is valid
 	def markingIsValid(self, coordinate):
 
-		# Returns True if the coordinate is a digit from 0-8 and the value of that
+		# Returns True if the coordinate/num is a digit from 0-8 and the value of that
 		# number on the board is a " "
 		if coordinate.isdigit():
 			coordinate = int(coordinate)
@@ -70,7 +70,7 @@ class Random_player(Player):
 
 	# Marks a random space
 	def markSpace(self):
-		# Keeps on looping until the random space is a " "
+		# Keeps on looping until the random space is a " " so the random user can assing a mark to it
 		while True:
 			points = [x for x in range(3)]
 			random_i = random.choice(points)
@@ -102,14 +102,14 @@ class Minimax_player(Player):
 	# Marks the space differently depending on the state of the board
 	def markSpace(self):
 
-		# If the player goes first, then pick a random space
+		# If the minimax player goes first, then pick a random space
 		if self.game_board.numOfEmptySpaces() == 9:
 			points = [x for x in range(3)]
 			random_i = random.choice(points)
 			random_j = random.choice(points)
 			self.game_board.board[random_i][random_j] = self.mark
 
-		# Otherwise, use the minimax function to pick the optiimal space
+		# Otherwise, use the minimax function to pick the optimal space
 		else:
 			best_score = -math.inf # Best score is infinitely small
 			for i in range(3):
@@ -172,7 +172,7 @@ class Minimax_player(Player):
 						score = self.minimax(True) # Maximize
 						self.game_board.board[i][j] = " " # Undo
 						
-						# best_score is the smalles value out of the 3 possible
+						# best_score is the smallest value out of the 3 possible
 						# outcomes => (1, 0, -1)
 						best_score = min(score, best_score)
-			return best_score # Return the best score(smalles)
+			return best_score # Return the best score(smallest)
