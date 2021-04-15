@@ -26,6 +26,11 @@ class Board:
 			board_with_nums.append(row)
 		return board_with_nums
 
+	# Prints the board with nums
+	def printNumBoard(self):
+		for i in range(3):
+			print("[ " + str(self.num_board[i][0]) + " ][ " + str(self.num_board[i][1]) + " ][ " + str(self.num_board[i][2]) + " ]")
+	
 	# Prints the board
 	def printBoard(self):
 		for i in range(3):
